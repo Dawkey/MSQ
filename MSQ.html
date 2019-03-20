@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <title>MSQ</title>
+        <link rel="stylesheet" href="/public/MSQ.css"/>
+    </head>
+    <body>
+        <audio id="audio" src="/public/shadowgraph.mp3" crossorigin="anonymous"></audio>
+        <div id="app">
+            <div class="main">
+                <div class="polygon">
+                    <svg :width="width" :height="height">
+                        <polygon :points="points" :stroke-width="line_width"></polygon>
+                    </svg>
+                </div>
+                <div id="button" @click.once="get_analyser" @click="audio_play">
+                    <span v-show="play_flag">Play</span>
+                    <span v-show="!play_flag">Pause</span>
+                </div>
+            </div>
+            <div class="control">
+                <div :class="{background: line_width === 0.5}" @click="width_change(0.5)">0.5（细点好！）</div>
+                <div :class="{background: line_width === 1}" @click="width_change(1)">1.0（正常点！!）</div>
+                <div :class="{background: line_width === 2}" @click="width_change(2)">2.0（粗！！！）</div>
+                <div :class="{background: mode_flag}" @click="mode_change(true)">不对称（不对称才叫美！）</div>
+                <div :class="{background: !mode_flag}" @click="mode_change(false)">对称（完美！）</div>
+                <div :class="{background: radius_num === 256}" @click="nums_change(256)">256（机器也是人，不能累着了！）</div>
+                <div :class="{background: radius_num === 512}" @click="nums_change(512)">512（512就足够啦！）</div>
+                <div :class="{background: radius_num === 1024}" @click="nums_change(1024)">1024（我是神机，有2048都给我上！）</div>
+            </div>
+        </div>
+        <script src="/public/TweenMax.min.js"></script>
+        <script src="/public/vue.js"></script>
+        <script src="/public/MSQ.js"></script>
+    </body>
+</html>

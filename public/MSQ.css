@@ -1,0 +1,69 @@
+svg{
+    display: block;
+}
+
+polygon{
+    fill: transparent;
+    stroke: #41B883;
+}
+
+#app{
+    display: flex;
+    width: 880px;
+    height: 500px;
+    margin: auto;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 430px;
+    height: 100%;
+}
+
+#button{
+    font-size: 14px;
+    height: 33px;
+    width: 65px;
+    line-height: 33px;
+    text-align: center;
+    background: #41B883;
+    box-shadow: 0 0 0.6rem 0 #aaa;
+    color: #f4f4f4;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.control >div:nth-of-type(1){
+    margin-top: 120px;
+}
+.control >div:nth-of-type(3),.control >div:nth-of-type(5){
+    margin-bottom: 25px;
+}
+
+.control >div{
+    float: left;
+    clear: both;
+    font-size: 13px;
+    height: 33px;
+    line-height: 33px;
+    background: #7b7b7b;
+    box-shadow: 0 0 0.6rem 0 #aaa;
+    color: #f4f4f4;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 0 8px;
+}
+
+.control >div:hover{
+    background: #41B883;
+}
+
+.control .background{
+    background: #41B883;
+    cursor: default;
+}
