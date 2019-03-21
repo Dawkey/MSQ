@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 if(this.analyser !== null){
                     return;
                 }
-                let ctx = new AudioContext();
+                let ctx = new (window.AudioContext || window.webkitAudioContext)();
                 let analyser = ctx.createAnalyser();
                 let audiosrc = ctx.createMediaElementSource($audio);
                 audiosrc.connect(analyser);
